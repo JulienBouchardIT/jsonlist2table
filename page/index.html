@@ -57,12 +57,12 @@
 
                         // Create copy button
                         var copyButton = document.createElement('button');
-                        copyButton.textContent = 'U+1F4CB';
+                        copyButton.textContent = '&#x1F4CB';
                         copyButton.classList.add('copy-button');
 
                         // Add click event listener to copy the cell text
                         copyButton.addEventListener('click', function() {
-                            copyToClipboard(cell.textContent);
+                            copyToClipboard(cell.textContent.slice(0, -8));
                         });
 
                         // Append the copy button to the cell
