@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+    <h1>jsonlist2table DEMO</h1>
     <table id="myTable">
         <tr id="headerRow"></tr>
     </table>
@@ -35,12 +36,17 @@
                     var row = document.createElement('tr');
 
                     // If it's the first item, generate table headers
+                    col==0
                     if (index === 0) {
                         Object.keys(item).forEach(key => {
                             var headerCell = document.createElement('th');
                             headerCell.textContent = key;
+                            headerCell.addEventListener('click', function() {
+                              sortTable(col);
+                            });
                             headerRow.appendChild(headerCell);
                         });
+                        col++;
                     }
 
                     // Generate table cells for each property
