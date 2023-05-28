@@ -1,8 +1,7 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy page
 
 on:
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -30,9 +29,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: blabla
+      - name: Generate a json list
         run: |
-          echo 'hello'
+          python3 gen_data.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
