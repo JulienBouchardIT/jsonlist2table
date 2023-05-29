@@ -47,13 +47,15 @@
 
                     // If it's the first item, generate table headers
                     if (index === 0) {
-                        var col = 0;
-                        Object.keys(item).forEach(key => {
-                            var headerCell = document.createElement('th');
-                            headerCell.textContent = key;
-                            headerRow.appendChild(headerCell);
-                            col++;
-                        });
+                      var col=0
+                      Object.keys(item).forEach(function(key, col) {
+                        var headerCell = document.createElement('th');
+                        headerCell.textContent = key;
+                        headerCell.addEventListener('click', function() {
+                          sortTable(col);
+                        headerRow.appendChild(headerCell);
+                        col++;
+                      });
                     }
 
                     // Generate table cells for each property
