@@ -14,7 +14,7 @@ def generate_random_objects(num_objects):
     return objects
 
 # Number of objects to generate
-num_objects = 5
+num_objects = 50
 
 # Generate random objects
 objects_list = generate_random_objects(num_objects)
