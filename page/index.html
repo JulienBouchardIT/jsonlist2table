@@ -50,10 +50,7 @@
                       var col=0
                       Object.keys(item).forEach(function(key, col) {
                         var headerCell = document.createElement('th');
-                        headerCell.textContent = key;
-                        headerCell.addEventListener('click', function() {
-                          sortTable(col);
-                        });
+                        headerCell.textContent = '<button class="buttonheader" onclick="sortTable('+col+')">'+key+'</button>';
                         headerRow.appendChild(headerCell);
                         col++;
                       });
