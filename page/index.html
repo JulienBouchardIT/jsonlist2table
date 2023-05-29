@@ -50,7 +50,7 @@
                       var col=0
                       Object.keys(item).forEach(function(key, col) {
                         var headerCell = document.createElement('th');
-                        headerCell.textContent = '<button class="buttonheader" onclick="sortTable('+col+')">'+key+'</button>';
+                        headerCell.innerHTML = '<button class="buttonheader" onclick="sortTable('+col+')">'+key+'</button>';
                         headerRow.appendChild(headerCell);
                         col++;
                       });
