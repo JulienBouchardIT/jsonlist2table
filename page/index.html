@@ -41,7 +41,7 @@
                         if(Array.isArray(value)){ //Its a list
                             Object.values(value).forEach(tag => { //Loop element of list
                                 cell.innerHTML += '<div class="tag">'+tag+'</div>'
-                            }
+                            });
                         }else{
                             var cell = document.createElement('td');
                             cell.textContent = value;
