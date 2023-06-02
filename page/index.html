@@ -37,6 +37,8 @@
 
                     // Generate table cells for each property
                     Object.values(item).forEach(value => {
+                        console.log(Array.isArray(value));
+                            
                         var cell = document.createElement('td');
                         cell.textContent = value;
 
