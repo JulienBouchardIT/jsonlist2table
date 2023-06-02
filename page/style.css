@@ -1,0 +1,33 @@
+* {
+  background-color: #393646;
+  color: #F4EEE0;
+}
+
+.buttonheader{
+  font-weight: bold;
+}
+
+button {
+  border: 0px
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #6D5D6E;
+  padding: 8px;
+  text-align: left;
+}
+
+a{
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+  border: 1px solid #F4EEE0;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 2px;
+}
