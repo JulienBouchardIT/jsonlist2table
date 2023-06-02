@@ -12,6 +12,18 @@
     </table>
 
     <script>
+        function getHUE(text) {
+          let hash = 0;
+          for (let i = 0; i < text.length; i++) {
+            hash = text.charCodeAt(i) + ((hash << 5) - hash);
+          }
+
+          // Use modulus operator to restrict the value between 0 and 255
+          const randomNumber = Math.abs(hash) % 256;
+
+          return randomNumber;
+        }
+        
         // Fetch the JSON data
         fetch('data.json')
             .then(response => response.json())
@@ -40,7 +52,7 @@
                         var cell = document.createElement('td');
                         if(Array.isArray(value)){ //Its a list
                             Object.values(value).forEach(tag => { //Loop element of list
-                                cell.innerHTML += '<div class="tag">'+tag+'</div>'
+                                cell.innerHTML += '<div class="tag" style="background-color: hsl('+getHUE(tag)+', 100%, 25%);">'+tag+'</div>'
                             });
                         }else{
                             var cell = document.createElement('td');
