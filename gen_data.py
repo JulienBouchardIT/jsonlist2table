@@ -8,7 +8,8 @@ def generate_random_objects(num_objects):
         obj = {
             "id": random.randint(1000, 1999),
             "firstname": random.choice(["John", "Alice", "Bob", "Jane"]),
-            "lastname": random.choice(["Doe", "Smith", "Johnson", "Williams"])
+            "lastname": random.choice(["Doe", "Smith", "Johnson", "Williams"]),
+            "grocery": ["potato","tomato","avocado"]
         }
         objects.append(obj)
     return objects
