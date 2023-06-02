@@ -37,24 +37,28 @@
 
                     // Generate table cells for each property
                     Object.values(item).forEach(value => {
-                        console.log(Array.isArray(value));
-                            
                         var cell = document.createElement('td');
-                        cell.textContent = value;
+                        if(Array.isArray(value)){ //Its a list
+                            Object.values(value).forEach(tag => { //Loop element of list
+                                cell.innerHTML += '<div class="tag">'+tag+'</div>'
+                            }
+                        }else{
+                            var cell = document.createElement('td');
+                            cell.textContent = value;
 
-                        // Create copy button
-                        var copyButton = document.createElement('button');
-                        copyButton.textContent = '📋';
-                        copyButton.classList.add('copy-button');
+                            // Create copy button
+                            var copyButton = document.createElement('button');
+                            copyButton.textContent = '📋';
+                            copyButton.classList.add('copy-button');
 
-                        // Add click event listener to copy the cell text
-                        copyButton.addEventListener('click', function() {
-                            copyToClipboard(cell.textContent.slice(0, -2));
-                        });
+                            // Add click event listener to copy the cell text
+                            copyButton.addEventListener('click', function() {
+                                copyToClipboard(cell.textContent.slice(0, -2));
+                            });
 
-                        // Append the copy button to the cell
-                        cell.appendChild(copyButton);
-
+                            // Append the copy button to the cell
+                            cell.appendChild(copyButton);
+                        }  
                         row.appendChild(cell);
                     });
 
